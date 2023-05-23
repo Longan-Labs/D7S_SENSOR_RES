@@ -251,7 +251,7 @@ A3: The sensor can operate at either 3.3V
 
 ## Resources
 
-- **[Zip]** [Grove - NFC(ST25DV64)](https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip)
+- **[Zip]** [Grove - D7S Vibration Sensor](https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip)
 - **[PDF]** [D7S Datasheet](https://github.com/Longan-Labs/D7S_SENSOR_RES/blob/main/en-d7s-957666.pdf)
 - **[GITHUB]** [D7S Arduino Library](https://github.com/Longan-Labs/d7s-grove-arduino)
 
