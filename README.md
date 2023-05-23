@@ -4,9 +4,9 @@ title: TBD
 keywords:
 - Grove
 image: TBD
-slug: Grove - NFC(ST25DV64)
+slug: Grove - D7S Vibration Sensor
 last_update:
-  date: 5/14/2023
+  date: 5/23/2023
   author: Stephen Lo
 ---
 
@@ -14,41 +14,26 @@ last_update:
 <!-- ![](https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/img/IMG_0012a.jpg) -->
   <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/c7b51f84ceaca85c9e24df663dbf5c0c2bf3524d/images/2-101021093---Grove---NFC(ST25DV64KC)-font.jpg" alt="pir" width={600} height="auto" /></p>
 
-Grove - NFC (ST25DV64) is an innovative and versatile NFC/RFID tag board based on the advanced ST25DV64K chip from STMicroelectronics. This dynamic chip supports ISO/IEC 15693 and NFC Forum Type 5 tag standards, making it compatible with a wide array of NFC-enabled devices.
+The Grove - D7S Vibration Sensor is a powerful earthquake detection module that provides real-time monitoring of seismic activities. It is based on the advanced D7S module developed by Omron Corporation, a leading manufacturer of sensing technology.
 
-Designed for makers, DIY enthusiasts, and anyone interested in experimenting with NFC technology, the Grove - NFC (ST25DV64) offers a simple, cost-effective solution for adding NFC functionality to your projects. With its open-source nature, you can not only use this board as is but also tweak it to better fit your specific needs, whether you're building a smart home system, a secure access control device, a contactless payment solution, or an inventory tracking system.
+Featuring a high-precision three-axis accelerometer and sophisticated earthquake algorithms, the Grove - D7S Vibration Sensor offers accurate and reliable detection of seismic events. It can detect various types of vibrations and classify them based on their severity, providing valuable information for earthquake monitoring and safety applications.
 
-The Grove - NFC (ST25DV64) is more than just an NFC tag. It's also a powerful tool that you can use to learn about NFC technology and its applications. With its rich features, you can explore various aspects of NFC, from data transfer and energy harvesting to data protection and general-purpose output.
-
-This board is designed with convenience in mind. It features the standard Grove connector (HY2.0 - 4Pin), making it easily compatible with other Grove modules. Additionally, it works with both 3.3V and 5V systems, making it a flexible solution for your NFC needs.
-
-Despite its small size, the Grove - NFC (ST25DV64) packs a punch when it comes to storage. It offers 64 Kbits of EEPROM, organized in 2048 blocks of 32 bits each, providing ample space for your data.
-
-Note: Please remember that the Grove - NFC (ST25DV64) does not come with an NFC antenna. You will need to purchase a separate 13.56MHz NFC antenna to use with this product. You can also purchase this antenna from Seeedstudio.
-
-Whether you're new to NFC or an experienced developer looking for an easy-to-use NFC solution, the Grove - NFC (ST25DV64) is an excellent choice. Its open-source software and hardware, combined with its ease of use and versatility, make it an invaluable tool for any NFC project.
+Designed with simplicity and versatility in mind, the Grove - D7S Vibration Sensor integrates seamlessly with Grove system, a modular prototyping platform. Its standardized interface allows for easy connection to Arduino boards and other compatible development platforms.
 
 <p style={{textAlign: 'center'}}><a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank"><img src="https://files.seeedstudio.com/wiki/Seeed-WiKi/docs/images/300px-Get_One_Now_Banner-ragular.png" /></a></p>
 
-:::tip
-    We've released the [Seeed Gas Sensor Selection Guide](https://wiki.seeedstudio.com/Sensor_gas/), it will help you choose the gas sensor that best suits your needs.
-:::
-
 ## Features
 
-- Based on the ST25DV64K chip, supporting ISO/IEC 15693 and NFC Forum Type 5 tag standards
-- 64 Kbits of EEPROM, organized in 2048 blocks of 32 bits each
-- Energy harvesting and GPO (General Purpose Output)
-- Fast transfer mode and multiple levels of data protection
-- Compatible with both 3.3V and 5V systems
-- Uses the standard Grove connector (HY2.0 - 4Pin) for easy integration with other Grove modules
-- Open-source software and hardware
+- High-Precision Accelerometer: Equipped with a three-axis accelerometer, the sensor provides accurate measurements of vibrations and seismic activity.
+- Real-Time Earthquake Detection: The Grove - D7S Vibration Sensor uses advanced algorithms to detect and classify seismic events in real time. It can differentiate between different magnitudes of earthquakes and provide corresponding alert signals.
+- Easy Integration with Grove System: The sensor features a Grove-compatible interface, allowing for easy connection to Arduino boards and other compatible platforms. No complex wiring or soldering is required, making it accessible to users of all skill levels.
+- Compact and Robust Design: The Grove - D7S Vibration Sensor has a compact form factor, making it suitable for various applications where space is limited. Its robust construction ensures durability and reliable performance, even in harsh environments.
+- Low Power Consumption: The sensor is designed to operate with low power consumption, making it suitable for long-term monitoring applications without draining the power source quickly.
 
 ## Specification
 
-- Chip: ST25DV64K
-- Operating frequency: 13.56 MHz
-- Protocol: ISO/IEC 15693
+- Chip: D7S
+- Measurement Range: ±6g
 - Communication interface: I2C
 - Grove connector: 4-pin HY2.0
 - Operating voltage: 3.3/5V
@@ -56,16 +41,19 @@ Whether you're new to NFC or an experienced developer looking for an easy-to-use
 ## In the Box
 
 ![](https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/5-101021093---Grove---NFC(ST25DV64KC)-45fontall.jpg)
-- 1xGrove - NFC(ST25DV64) Board
-- 2xGrove Cable(20cm)
+- 1 x Grove - D7S Vibration Sensor Board
+- 1 x Grove Cable(20cm)
 
 ## Applications
 
-- **Access Control:** Use the Grove - NFC (ST25DV64) as a key card for access control systems.
-- **Smart Home Automation:** Store configuration data on the tag to control smart home devices or trigger specific actions.
-- **Contactless Payments:** Integrate the tag into a payment system for contactless transactions.
-- **Device Pairing:** Simplify the pairing process between devices by storing connection information on the NFC tag.
-- **Inventory Tracking:** Attach the NFC tag to products to store product information and simplify inventory management.
+The Grove - D7S Vibration Sensor can be used in a wide range of applications, including but not limited to:
+
+- Earthquake Monitoring Systems: Deploying the sensor in buildings, bridges, and critical infrastructure allows for real-time monitoring of seismic activities. It enables early detection and alert systems, contributing to improved safety and disaster response.
+- Seismic Research and Analysis: Researchers can utilize the Grove - D7S Vibration Sensor to collect data for seismic studies and analysis. The sensor's high-precision measurements provide valuable insights into earthquake patterns and characteristics.
+- Structural Safety Assessment: The sensor can be integrated into structural health monitoring systems to evaluate the integrity and stability of buildings, bridges, and other structures. It helps identify potential structural weaknesses caused by seismic events.
+- IoT-based Seismic Monitoring Networks: By deploying multiple Grove - D7S Vibration Sensors in a network, it is possible to create a distributed system for comprehensive seismic monitoring over a larger area. This setup enables efficient data collection and analysis for improved earthquake preparedness.
+
+These are just a few examples of the diverse applications that the Grove - D7S Vibration Sensor enables. Its versatility and high-performance make it a valuable tool in earthquake-related projects.
 
 ## Hardware Overview
 
