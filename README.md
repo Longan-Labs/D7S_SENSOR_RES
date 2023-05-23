@@ -74,10 +74,10 @@ These are just a few examples of the diverse applications that the Grove - D7S V
 
 **Materials required**
 
-| Seeeduino V4.2 | NFC Antenna| Grove - Smart Air Quality Sensor (SGP41) |
+| Seeeduino V4.2 | Base Shield| Grove - D7S Vibration Sensor |
 |--------------|-------------|-----------------|
-|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_1.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/NFC_ANTENNA.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/c7b51f84ceaca85c9e24df663dbf5c0c2bf3524d/images/2-101021093---Grove---NFC(ST25DV64KC)-font.jpg" alt="pir" width={500} height="auto" /></p>|
-|<a href="https://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/NFC-Antenna-p-1805.html?queryID=32009a01d3dd8bba3d47aacebce9f91d&objectID=1138&indexName=bazaar_retailer_products" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank">Get One Now</a>|
+|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_1.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_4.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/img/thumbnail.jpg" alt="pir" width={500} height="auto" /></p>|
+|<a href="https://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Base-Shield-V2-p-1378.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank">Get One Now</a>|
 
 :::note
     **1** Please plug the USB cable gently, otherwise you may damage the port. Please use the USB cable with 4 wires inside, the 2 wires cable can't transfer data. If you are not sure about the wire you have, you can click [here](https://www.seeedstudio.com/Micro-USB-Cable-48cm-p-1475.html) to buy
@@ -85,17 +85,14 @@ These are just a few examples of the diverse applications that the Grove - D7S V
     **2** Each Grove module comes with a Grove cable when you buy. In case you lose the Grove cable, you can click [here](https://www.seeedstudio.com/Grove-Universal-4-Pin-Buckled-20cm-Cable-%285-PCs-pack%29-p-936.html) to buy.
 :::
 
-- **Step 1.** Connect Grove - Smart Air Quality Sensor (SGP41) to **I2C** port  of Grove-Base Shield.
+- **Step 1.** Connect Grove - D7S Vibration Sensor to **I2C** port of Grove-Base Shield.
 
 - **Step 2.** Plug Grove - Base Shield into Seeeduino.
 
 - **Step 3.** Connect Seeeduino to PC via a USB cable.
 
-:::note
-    The Grove - NFC (ST25DV64) does not come with an NFC antenna. Therefore, you will need to purchase a separate 13.56MHz NFC antenna to use with this product. You can also purchase this antenna from Seeedstudio.
-:::
 
-| Seeeduino     | Grove-VOC and eCO2 Gas Sensor(SGP30) |
+| Seeeduino     | Grove - D7S Vibration Sensor |
 |---------------|-------------------------|
 | 3.3/5V        | Red                     |
 | GND           | Black                   |
@@ -104,72 +101,127 @@ These are just a few examples of the diverse applications that the Grove - D7S V
 
 #### Software
 
-- **Step 1.** Download the [ST25DV Arduino Library](https://github.com/stm32duino/ST25DV) from Github.
+- **Step 1.** Download the [Grove - D7S Vibration Sensor](https://github.com/Longan-Labs/d7s-grove-arduino) from Github.
 
 - **Step 2.** Refer to [How to install library](https://wiki.seeedstudio.com/How_to_install_Arduino_Library) to install library for Arduino.
 
-- **Step 3.** After downloading and installing the library correctly, you can find an example program named ST25DV_HelloWorld.ino in the examples folder. This program is designed for the ST25DV module.
+- **Step 3.** After downloading and installing the library correctly, you can find an example program named sample.ino in the examples folder. This program is designed for the D7S module.
 
 ```Arduino
-#include "ST25DVSensor.h"
+#include <D7S.h>
 
-#define SerialPort      Serial
+//old earthquake data
+float oldSI = 0;
+float oldPGA = 0;
 
-#if defined(ARDUINO_B_L4S5I_IOT01A)
-// Pin definitions for board B-L4S5I_IOT01A
-  #define GPO_PIN PE4
-  #define LPD_PIN PE2
-  #define SDA_PIN PB11
-  #define SCL_PIN PB10
-  #define WireNFC MyWire
-  TwoWire MyWire(SDA_PIN, SCL_PIN);
-  ST25DV st25dv(12, -1, &MyWire);
-#else
-  #define DEV_I2C         Wire
-  ST25DV st25dv(12, -1, &DEV_I2C);
-#endif
+//flag variables to handle collapse/shutoff only one time during an earthquake
+bool shutoffHandled = false;
+bool collapseHandled = false;
 
-void setup() {
-  const char uri_write_message[] = "st.com/st25";       // Uri message to write in the tag
-  const char uri_write_protocol[] = URI_ID_0x01_STRING; // Uri protocol to write in the tag
-  String uri_write = String(uri_write_protocol) + String(uri_write_message);
-  String uri_read;
-
-  // Initialize serial for output.
-  SerialPort.begin(115200);
-
-  // The wire instance used can be omitted in case you use default Wire instance
-  if(st25dv.begin() == 0) {
-    SerialPort.println("System Init done!");
-  } else {
-    SerialPort.println("System Init failed!");
-    while(1);
-  }
-
-  if(st25dv.writeURI(uri_write_protocol, uri_write_message, "")) {
-    SerialPort.println("Write failed!");
-    while(1);
-  }
-
-  delay(100);
-  
-  if(st25dv.readURI(&uri_read)) {
-    SerialPort.println("Read failed!");
-    while(1);
-  }
-
-  SerialPort.println(uri_read.c_str());
-
-  if(strcmp(uri_read.c_str(), uri_write.c_str()) == 0) {
-    SerialPort.println("Successfully written and read!");
-  } else {
-    SerialPort.println("Read bad string!");
-  }
+//function to handle collapse event
+void handleCollapse()
+{
+    //put here the code to handle the collapse event
+    Serial.println("-------------------- COLLAPSE! --------------------");
 }
 
-void loop() {  
-  //empty loop
-} 
+void setup()
+{
+    // Open serial communications and wait for port to open:
+    Serial.begin(9600);
+    while (!Serial)
+    {
+        ; // wait for serial port to connect. Needed for native USB port only
+    }
+
+    Serial.print("Starting D7S communications (it may take some time)...");
+    //start D7S connection
+    D7S.begin();
+    //wait until the D7S is ready
+    while (!D7S.isReady())
+    {
+        Serial.print(".");
+        delay(500);
+    }
+    Serial.println("STARTED");
+
+    //setting the D7S to switch the axis at inizialization time
+    Serial.println("Setting D7S sensor to switch axis at inizialization time.");
+    D7S.setAxis(SWITCH_AT_INSTALLATION);
+
+    Serial.println("Initializing the D7S sensor in 2 seconds. Please keep it steady during the initializing process.");
+    delay(2000);
+    Serial.print("Initializing...");
+    //start the initial installation procedure
+    D7S.initialize();
+    //wait until the D7S is ready (the initializing process is ended)
+    while (!D7S.isReady())
+    {
+        Serial.print(".");
+        delay(500);
+    }
+    Serial.println("INITIALIZED!");
+
+    //check if there there was a collapse (if this is the first time the D7S is put in place the installation data may be wrong)
+    if (D7S.isInCollapse())
+    {
+        handleCollapse();
+    }
+
+    //reset the events shutoff/collapse memorized into the D7S
+    D7S.resetEvents();
+
+    Serial.println("\nListening for earthquakes!");
+}
+
+void loop()
+{
+
+    //checking if there is an earthquake occuring right now
+    if (D7S.isEarthquakeOccuring())
+    {
+
+        //check if the shutoff event has been handled and if the shutoff condition is met
+        //the call of D7S.isInShutoff() is executed after to prevent useless I2C call
+        if (!collapseHandled && D7S.isInCollapse())
+        {
+            handleCollapse();
+            collapseHandled = true;
+        }
+
+        //print information about the current earthquake
+        float currentSI = D7S.getInstantaneusSI();
+        float currentPGA = D7S.getInstantaneusPGA();
+
+        if (currentSI > oldSI || currentPGA > oldPGA)
+        {
+            //getting instantaneus SI
+            Serial.print("\tInstantaneus SI: ");
+            Serial.print(currentSI);
+            Serial.println(" [m/s]");
+
+            //getting instantaneus PGA
+            Serial.print("\tInstantaneus PGA (Peak Ground Acceleration): ");
+            Serial.print(currentPGA);
+            Serial.println(" [m/s^2]\n");
+
+            //save the current data
+            oldSI = currentSI;
+            oldPGA = currentPGA;
+        }
+    }
+    else
+    {
+        //reset the old earthquake data
+        oldPGA = 0;
+        oldSI = 0;
+        //reset the flag of the handled events
+        shutoffHandled = false;
+        collapseHandled = false;
+        //reset D7S events
+        D7S.resetEvents();
+    }
+}
 ```
 
 - **Step 4.** Upload the demo. If you do not know how to upload the code, please check [How to upload code](https://wiki.seeedstudio.com/Upload_Code/).
