@@ -187,16 +187,30 @@ To test its functionality, you'll need an NFC-enabled smartphone, either Android
 Place the phone's NFC antenna close to the NFC antenna of the Grove - NFC (ST25DV64). Your smartphone should display a prompt requesting to open a webpage at st.com. This response indicates that your Grove - NFC (ST25DV64) is functioning correctly as an NFC Tag and demonstrates the demo's functionality.
 ![](https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/stcom.jpg)
 
+## FAQ
+
+Q1: Can the Grove - D7S Vibration Sensor detect all types of earthquakes?
+
+A1: The Grove - D7S Vibration Sensor is designed to detect a wide range of seismic activities, including both minor and major earthquakes. However, the detection range and sensitivity may vary depending on the magnitude and proximity of the earthquake.
+
+Q2: Can I use the Grove - D7S Vibration Sensor with other development boards apart from Arduino?
+
+A2: Yes, the Grove - D7S Vibration Sensor is compatible with other development boards that support the I2C interface. Ensure that you have the necessary libraries and resources available for your chosen platform.
+
+Q3: What is the power requirement for the Grove - D7S Vibration Sensor?
+
+A3: The sensor can operate at either 3.3V
+
 ## Schematic Online Viewer
 
-<div className="altium-ecad-viewer" data-project-src="https://github.com/Longan-Labs/NFC_ST25DV_RES/raw/main/Grove%20-%20NFC(ST25DV64).zip" style={{borderRadius: '0px 0px 4px 4px', height: 500, borderStyle: 'solid', borderWidth: 1, borderColor: 'rgb(241, 241, 241)', overflow: 'hidden', maxWidth: 1280, maxHeight: 700, boxSizing: 'border-box'}}>
+<div className="altium-ecad-viewer" data-project-src="https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip" style={{borderRadius: '0px 0px 4px 4px', height: 500, borderStyle: 'solid', borderWidth: 1, borderColor: 'rgb(241, 241, 241)', overflow: 'hidden', maxWidth: 1280, maxHeight: 700, boxSizing: 'border-box'}}>
 </div>
 
 ## Resources
 
-- **[Zip]** [Grove - NFC(ST25DV64)](https://github.com/Longan-Labs/NFC_ST25DV_RES/raw/main/Grove%20-%20NFC(ST25DV64).zip)
-- **[PDF]** [ST25DV64K Datasheet](https://github.com/Longan-Labs/NFC_ST25DV_RES/blob/c7b51f84ceaca85c9e24df663dbf5c0c2bf3524d/st25dv.pdf)
-- **[GITHUB]** [ST25DV Arduino Library](https://github.com/stm32duino/ST25DV)
+- **[Zip]** [Grove - NFC(ST25DV64)](https://github.com/Longan-Labs/D7S_SENSOR_RES/raw/main/D7S%20Vibration%20Sensor.zip)
+- **[PDF]** [D7S Datasheet](https://github.com/Longan-Labs/D7S_SENSOR_RES/blob/main/en-d7s-957666.pdf)
+- **[GITHUB]** [D7S Arduino Library](https://github.com/Longan-Labs/d7s-grove-arduino)
 
 ## Tech Support
 If you have any technical issue.  submit the issue into our [forum](https://forum.seeedstudio.com/).
