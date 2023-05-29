@@ -12,7 +12,7 @@ last_update:
 
 
 <!-- ![](https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/img/IMG_0012a.jpg) -->
-  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/c7b51f84ceaca85c9e24df663dbf5c0c2bf3524d/images/2-101021093---Grove---NFC(ST25DV64KC)-font.jpg" alt="pir" width={600} height="auto" /></p>
+  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/main.jpg" alt="pir" width={600} height="auto" /></p>
 
 The Grove - D7S Vibration Sensor is a powerful earthquake detection module that provides real-time monitoring of seismic activities. It is based on the advanced D7S module developed by Omron Corporation, a leading manufacturer of sensing technology.
 
@@ -40,7 +40,6 @@ Designed with simplicity and versatility in mind, the Grove - D7S Vibration Sens
 
 ## In the Box
 
-![](https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/5-101021093---Grove---NFC(ST25DV64KC)-45fontall.jpg)
 - 1 x Grove - D7S Vibration Sensor Board
 - 1 x Grove Cable(20cm)
 
@@ -59,7 +58,7 @@ These are just a few examples of the diverse applications that the Grove - D7S V
 
 ### Pin Map
 
-<!-- ![](https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/pinmap.png) -->
+<!-- ![](https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/pinmap.png) -->
   <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/pinmap.png" alt="pir" width={600} height="auto" /></p>
 
 ## Getting Started
@@ -76,7 +75,7 @@ These are just a few examples of the diverse applications that the Grove - D7S V
 
 | Seeeduino V4.2 | Base Shield| Grove - D7S Vibration Sensor |
 |--------------|-------------|-----------------|
-|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_1.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_4.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://files.seeedstudio.com/wiki/Grove-VOC_and_eCO2_Gas_Sensor-SGP30/img/thumbnail.jpg" alt="pir" width={500} height="auto" /></p>|
+|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_1.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://files.seeedstudio.com/wiki/Grove_Light_Sensor/images/gs_4.jpg" alt="pir" width={600} height="auto" /></p>|<p><img src="https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/small.jpg" alt="pir" width={500} height="auto" /></p>|
 |<a href="https://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/Base-Shield-V2-p-1378.html" target="_blank">Get One Now</a>|<a href="https://www.seeedstudio.com/-Grove-VOC-and-eCO2-Gas-Sensor-(SGP30)-p-3071.html" target="_blank">Get One Now</a>|
 
 :::note
