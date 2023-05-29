@@ -59,7 +59,7 @@ These are just a few examples of the diverse applications that the Grove - D7S V
 ### Pin Map
 
 <!-- ![](https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/pinmap.png) -->
-  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/NFC_ST25DV_RES/main/images/pinmap.png" alt="pir" width={600} height="auto" /></p>
+  <p style={{textAlign: 'center'}}><img src="https://raw.githubusercontent.com/Longan-Labs/D7S_SENSOR_RES/main/images/pinmap.png" alt="pir" width={600} height="auto" /></p>
 
 ## Getting Started
 
